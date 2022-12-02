@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Article from './Article';
 import TopArticle from './TopArticle';
 import styles from '../styles/Home.module.css';
+import { BACKEND_ADDRESS } from '../environmentVariables';
 
 function Home() {
   const bookmarks = useSelector((state) => state.bookmarks.value);
@@ -13,7 +14,7 @@ function Home() {
   const [topArticle, setTopArticle] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:3000/articles')
+    fetch(`${BACKEND_ADDRESS}articles`)
       .then(response => response.json())
       .then(data => {
         setTopArticle(data.articles[0]);
@@ -28,8 +29,6 @@ function Home() {
     const isHidden = hiddenArticles.some(hiddenArticles => hiddenArticles.title === data.title);
     return <Article key={i} {...data} isBookmarked={isBookmarked} isHidden={isHidden} />;
   });
-
-  // console.log(articles[0].props.isHidden);
 
   let topArticles;
   if (bookmarks.some(bookmark => bookmark.title === topArticle.title)) {

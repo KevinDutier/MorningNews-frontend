@@ -9,6 +9,7 @@ import { faUser, faXmark, faEye } from '@fortawesome/free-solid-svg-icons';
 import Moment from 'react-moment';
 import { Modal } from 'antd';
 import Link from 'next/link';
+import { BACKEND_ADDRESS } from '../environmentVariables';
 
 function Header() {
 	const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function Header() {
 	}, []);
 
 	const handleRegister = () => {
-		fetch('http://localhost:3000/users/signup', {
+		fetch(`${BACKEND_ADDRESS}users/signup`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: signUpUsername, password: signUpPassword }),
@@ -43,7 +44,7 @@ function Header() {
 
 	const handleConnection = () => {
 
-		fetch('http://localhost:3000/users/signin', {
+		fetch(`${BACKEND_ADDRESS}users/signin`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: signInUsername, password: signInPassword }),

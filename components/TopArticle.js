@@ -3,7 +3,7 @@ import { addBookmark, removeBookmark } from '../reducers/bookmarks';
 import styles from '../styles/TopArticle.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
-
+import { BACKEND_ADDRESS } from '../environmentVariables';
 
 function TopArticle(props) {
 
@@ -15,7 +15,7 @@ function TopArticle(props) {
 			return;
 		}
 
-		fetch(`http://localhost:3000/users/canBookmark/${user.token}`)
+		fetch(`${BACKEND_ADDRESS}users/canBookmark/${user.token}`)
 			.then(response => response.json())
 			.then(data => {
 				if (data.result && data.canBookmark) {
