@@ -33,7 +33,6 @@ Frontend:
 + hooks, useEffect
 + components
 + props
-+ inverse data flow
 
 Backend:
 + familiarization with express
