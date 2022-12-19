@@ -1,3 +1,6 @@
+## Deployment
+https://morningnews-gamma.vercel.app/
+
 # MorningNews - Frontend
 
 MorningNews is a project that was made using React during my Web Developper coding bootcamp at La Capsule, Paris.
@@ -37,7 +40,3 @@ Frontend:
 Backend:
 + familiarization with express
 + sending requests to APIs and web services
-
-
-## Deployment
-https://morningnews-gamma.vercel.app/
