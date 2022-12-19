@@ -3,7 +3,7 @@ https://morningnews-vercel.vercel.app/
 
 # MorningNews - Frontend
 
-MorningNews is a project that was made using React during my Web Developper coding bootcamp at La Capsule, Paris.
+MorningNews is a project that was made using React and Next JS during my Web Developper coding bootcamp at La Capsule, Paris.
 
 It is a website that displays the latest tech news articles dynamically by communicating with the News API.
 
@@ -34,6 +34,7 @@ Back:
 Frontend:
 + states
 + hooks, useEffect
++ redux store and persist
 + components
 + props
 
