@@ -9,7 +9,6 @@ import { faUser, faXmark, faEye } from '@fortawesome/free-solid-svg-icons';
 import Moment from 'react-moment';
 import { Modal } from 'antd';
 import Link from 'next/link';
-import { BACKEND_ADDRESS } from '../environmentVariables';
 
 function Header() {
 	const dispatch = useDispatch();
@@ -27,7 +26,7 @@ function Header() {
 	}, []);
 
 	const handleRegister = () => {
-		fetch(`${BACKEND_ADDRESS}users/signup`, {
+		fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/users/signup`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: signUpUsername, password: signUpPassword }),

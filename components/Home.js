@@ -4,7 +4,6 @@ import Head from 'next/head';
 import Article from './Article';
 import TopArticle from './TopArticle';
 import styles from '../styles/Home.module.css';
-import { BACKEND_ADDRESS } from '../environmentVariables';
 
 function Home() {
   const bookmarks = useSelector((state) => state.bookmarks.value);
@@ -13,8 +12,9 @@ function Home() {
   const [articlesData, setArticlesData] = useState([]);
   const [topArticle, setTopArticle] = useState({});
 
+		console.log(process.env.NEXT_PUBLIC_BACKEND_ADDRESS)
   useEffect(() => {
-    fetch(`${BACKEND_ADDRESS}articles`)
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDRESS}/articles`)
       .then(response => response.json())
       .then(data => {
         setTopArticle(data.articles[0]);
