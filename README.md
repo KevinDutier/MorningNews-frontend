@@ -1,5 +1,5 @@
 ## Deployment
-https://morningnews-gamma.vercel.app/
+https://morningnews-vercel.vercel.app/
 
 # MorningNews - Frontend
 
